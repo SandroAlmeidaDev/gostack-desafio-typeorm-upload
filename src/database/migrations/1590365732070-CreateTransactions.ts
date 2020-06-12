@@ -29,6 +29,18 @@ export default class CreateTransactions1590365732070
             scale: 2,
           },
           {
+            name: 'payment_type',
+            type: 'varchar',
+          },
+          {
+            name: 'transaction_date',
+            type: 'timestamp with time zone',
+          },
+          {
+            name: 'transaction_expiration',
+            type: 'timestamp with time zone',
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',

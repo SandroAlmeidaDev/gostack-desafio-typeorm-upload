@@ -7,6 +7,10 @@ import Category from '../models/Category';
 import TransactionsRepository from '../repositories/TransactionsRepository';
 
 interface Request {
+  company_id: string;
+  payment_type: string;
+  transaction_date: Date;
+  transaction_expiration: Date;
   title: string;
   value: number;
   type: 'income' | 'outcome';
@@ -15,6 +19,10 @@ interface Request {
 
 export class CreateTransactionService {
   public async execute({
+    company_id,
+    payment_type,
+    transaction_date,
+    transaction_expiration,
     title,
     value,
     type,
@@ -42,7 +50,6 @@ export class CreateTransactionService {
         title: category,
       });
 
-      // Salva no banco de dados
       await categoryRepository.save(categoryNew);
 
       categoryId = categoryNew.id;
@@ -51,6 +58,10 @@ export class CreateTransactionService {
     }
 
     const transaction = transactionsRepository.create({
+      company_id,
+      payment_type,
+      transaction_date,
+      transaction_expiration,
       title,
       value,
       type,
