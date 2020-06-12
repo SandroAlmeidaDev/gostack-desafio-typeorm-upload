@@ -16,7 +16,7 @@ export default class CreateCompanies1591915303356
           },
           {
             name: 'cnpj',
-            type: 'integer',
+            type: 'numeric',
           },
           {
             name: 'state_registration',
@@ -69,21 +69,9 @@ export default class CreateCompanies1591915303356
             isNullable: true,
           },
           {
-            name: 'email',
-            type: 'varchar',
-            isUnique: true,
-          },
-          {
-            name: 'password',
-            type: 'varchar',
-          },
-          {
             name: 'avatar',
             type: 'varchar',
-          },
-          {
-            name: 'company_type',
-            type: 'varchar',
+            isNullable: true,
           },
           {
             name: 'created_at',

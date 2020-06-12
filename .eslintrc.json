@@ -24,12 +24,16 @@
     "prettier"
   ],
   "rules": {
+    "no-unused-vars": "off",
     "no-underscore-dangle": "off",
     "prettier/prettier": "error",
     "class-methods-use-this": "off",
     "@typescript-eslint/camelcase": "off",
     "@typescript-eslint/no-unused-vars": ["error", {
-      "argsIgnorePattern": "_"
+      "argsIgnorePattern": "_",
+      "vars": "local",
+      "args": "after-used",
+      "ignoreRestSiblings": false
     }],
     "import/extensions": [
       "error",
