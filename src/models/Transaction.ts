@@ -28,7 +28,7 @@ class Transaction {
   title: string;
 
   @Column()
-  type: 'income' | 'outcome';
+  type: 'recipe' | 'expense';
 
   @Column('decimal')
   value: number;
@@ -40,7 +40,18 @@ class Transaction {
   company_id: string;
 
   @Column()
-  payment_type: string;
+  payment_type:
+    | 'Dinheiro'
+    | 'Cheque'
+    | 'Cheque_pre'
+    | 'Cheque_terc'
+    | 'Prazo'
+    | 'Tef'
+    | 'Pos'
+    | 'Convenio'
+    | 'Ticket'
+    | 'Contravale'
+    | 'Outros';
 
   @Column('timestamp with time zone')
   transaction_date: Date;

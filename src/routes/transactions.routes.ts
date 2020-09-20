@@ -19,6 +19,8 @@ transactionsRouter.get('/', async (request, response) => {
 
   const transactiontotal = {
     transactions: await transactionsRepository.find(),
+    BalanceCreditPaymentMethods: await transactionsRepository.getBalanceCreditPaymentMethods(),
+    BalanceDebitPaymentMethods: await transactionsRepository.getBalanceDebitPaymentMethods(),
     balance: await transactionsRepository.getBalance(),
   };
 
